@@ -17,8 +17,8 @@ A simple calculator built with **HTML**, **CSS**, and **JavaScript** as part of 
 ## Technologies Used
 
 - HTML5
-- CSS3
-- JavaScript (ES6)
+- CSS
+- JavaScript 
 
 ## What I Learned
 
