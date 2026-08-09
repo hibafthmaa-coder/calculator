@@ -12,9 +12,10 @@ function div(a,b) {
     return a/b;
 }
 
-let firstNumber;
+let firstNumber="";
 let secondNumber;
 let operator;
+let storedNumber;
 
 function operate( firstNumber,secondNumber, operator) {
     if (operator === "+") {
@@ -27,17 +28,42 @@ function operate( firstNumber,secondNumber, operator) {
         return div(firstNumber,secondNumber);
     }
 }
-console.log(operate);
+
+
 
 const digitButton = document.querySelectorAll(".digits");
 const displayReal = document.querySelector("#display");
 
 for (let i = 0; i < digitButton.length; i++) {
-
     digitButton[i].addEventListener("click", function (event) {
-    console.log(event.target.textContent); 
-    firstNumber = event.target.textContent;
-    console.log(firstNumber);
-    displayReal.textContent = event.target.textContent;
-});
+        const clickedDigit = event.target.textContent;
+
+        firstNumber = firstNumber + clickedDigit;
+
+        displayReal.textContent = firstNumber;
+    });
 }
+
+const operatorButton = document.querySelectorAll(".operator");
+
+for (let i = 0; i < operatorButton.length; i++) {
+     operatorButton[i].addEventListener("click", function (event) {
+        const clickedOperator = event.target.textContent;
+
+        operator = clickedOperator;
+        storedNumber = firstNumber;
+        firstNumber = "";
+
+        displayReal.textContent = operator;
+    });
+
+}
+
+const equalsButton = document.querySelector("#equals");
+
+equalsButton.addEventListener("click", function () {
+    secondNumber = Number(firstNumber);
+
+let result = operate(Number(storedNumber), secondNumber, operator);
+displayReal.textContent = result;
+});
