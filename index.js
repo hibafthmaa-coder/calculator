@@ -6,7 +6,7 @@ function sub(a,b) {
     return a-b ;
 }
 function mul(a,b){
-    return a*b;
+    return a * b;
 }
 function div(a,b) {
     return a/b;
@@ -28,3 +28,16 @@ function operate( firstNumber,secondNumber, operator) {
     }
 }
 console.log(operate);
+
+const digitButton = document.querySelectorAll(".digits");
+const displayReal = document.querySelector("#display");
+
+for (let i = 0; i < digitButton.length; i++) {
+
+    digitButton[i].addEventListener("click", function (event) {
+    console.log(event.target.textContent); 
+    firstNumber = event.target.textContent;
+    console.log(firstNumber);
+    displayReal.textContent = event.target.textContent;
+});
+}
