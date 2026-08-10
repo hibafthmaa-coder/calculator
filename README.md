@@ -9,8 +9,7 @@ A simple calculator built with **HTML**, **CSS**, and **JavaScript** as part of 
 - Multiplication
 - Division
 - Decimal number support
-- Clear button (AC)
-- Delete (DEL) button
+- Clear button 
 - Prevents invalid inputs
 - Responsive and user-friendly interface
 
